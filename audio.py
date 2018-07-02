@@ -10,6 +10,7 @@ from vk_api.audio import VkAudio
 
 DOWNLOAD_DIR = './download'
 
+
 def main():
     login, password = input('Login: '), getpass.getpass()
 
@@ -28,8 +29,8 @@ def main():
     audios = vkaudio.get(owner_id=id)
 
     for audio in audios:
-        artist = audio['artist'].replace('/','')
-        title = audio['title'].replace('/','')
+        artist = audio['artist'].replace('/', '')
+        title = audio['title'].replace('/', '')
         url = audio['url']
 
         file_name = '/'.join((DOWNLOAD_DIR, '{} - {}.mp3'.format(artist, title)))
